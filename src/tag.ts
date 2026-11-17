@@ -4,32 +4,18 @@ class ArticleTagMode extends TagMode {
 	name = 'article';
 
 	tagList = {
-		'Content and sourcing': [
+		Maintenance: [
 			{
 				tag: 'Cleanup',
-				description: 'This article needs general cleanup',
+				description: 'This article needs cleanup',
 			},
 			{
 				tag: 'Unreferenced',
 				description: 'This article needs references',
 			},
 			{
-				tag: 'More citations needed',
-				description: 'Some claims need additional references',
-			},
-		],
-		'Accuracy and neutrality': [
-			{
-				tag: 'Disputed',
-				description: 'The accuracy of this article is disputed',
-			},
-			{
-				tag: 'Advert',
-				description: 'This article contains promotional language',
-			},
-			{
 				tag: 'Outdated',
-				description: 'This article may contain outdated information',
+				description: 'This article contains outdated information',
 			},
 		],
 	};
@@ -41,17 +27,8 @@ class ArticleTagMode extends TagMode {
 			mw.config.get('wgAction') === 'view'
 		);
 	}
-
-	getMenuTooltip(): string {
-		return 'Add maintenance templates to this article';
-	}
-
-	getWindowTitle(): string {
-		return 'Tag article';
-	}
 }
 
-// IMPORTANT: modeList belongs to TagCore itself.
 TagCore.modeList = [ArticleTagMode];
 
 export { TagCore as Tag };

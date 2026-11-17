@@ -14,7 +14,8 @@
 		"test:unit": "webpack && jest --selectProjects unit",
 		"test:integration": "webpack && jest --selectProjects integration",
 		"test:integration:setup": "npm i --no-save playwright@1.9.1 && cd tests/integration/docker && bash main.sh",
-		"test:integration:teardown": "cd tests/integration/docker && docker-compose down"
+		"test:integration:teardown": "cd tests/integration/docker && docker-compose down",
+		"deploy": "node scripts/deploy.js"
 	},
 	"repository": {
 		"type": "git",

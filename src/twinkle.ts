@@ -8,12 +8,18 @@ import { Fluff } from './fluff';
 // no customisation; import directly from core
 import { DiffCore as Diff } from './core';
 
+import { Tag } from './tag';
+
 // register some globals for debugging, as per twinkle v2
 import './globals';
 
 // Check if account is experienced enough to use Twinkle
-if (!Morebits.userIsInGroup('autoconfirmed') && !Morebits.userIsInGroup('confirmed')) {
-	throw new Error('Twinkle: forbidden!');
+//if (!Morebits.userIsInGroup('autoconfirmed') && !Morebits.userIsInGroup('confirmed')) {
+//	throw new Error('Twinkle: forbidden!');
+//}
+// for testing we're doing sysops only
+if (!Morebits.userIsInGroup('sysop')) {
+	throw new Error('Twinkle: administrator testing only');
 }
 
 Twinkle.userAgent = `Twinkle (${mw.config.get('wgWikiID')})`;
@@ -27,7 +33,7 @@ Twinkle.messageOverrides = messages;
 Twinkle.extraMwMessages = mwMessageList;
 
 // List of module classes enabled
-Twinkle.registeredModules = [Fluff, Diff];
+Twinkle.registeredModules = [Fluff, Diff, Tag];
 
 /**
  * Adjust the following configurations if necessary

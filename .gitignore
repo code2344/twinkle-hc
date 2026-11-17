@@ -29,3 +29,5 @@ npm-debug.log*
 
 #Generated files
 build/
+
+scripts/credentials.json

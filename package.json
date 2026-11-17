@@ -25,7 +25,8 @@
 	"license": "CC-BY-SA-3.0",
 	"homepage": "https://github.com/code2344/twinkle-hc",
 	"sideEffects": [
-		"src/globals.ts"
+		"src/globals.ts",
+		"src/tag.ts"
 	],
 	"dependencies": {
 		"tslib": "2.6.2",
